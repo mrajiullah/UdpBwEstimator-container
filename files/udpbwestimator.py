@@ -66,9 +66,9 @@ EXPCONFIG = {
         "verbosity": 2,  # 0 = "Mute", 1=error, 2=Information, 3=verbose
         "resultdir": "/monroe/results/",
         "modeminterfacename": "InternalInterface",
-        "burst_size":["150","300","600","900"],
-	"no_bursts":[10,20,30],
-	"server_ip":"193.10.227.44",	
+        "burst_size":["75","150","300","600","1200"],
+	"no_bursts":["10"],
+	"server_ip":"130.243.27.222",	
 	"server_name":"",	
 	"packet_size":"1400",
         "allowed_interfaces": ["op0",
@@ -209,10 +209,10 @@ def run_exp(expconfig,ip):
 
     print num_packets
     logfile.close()
-    har_stats["burst_size"]=expconfig["used_burst_size"]
-    har_stats["no_bursts"]=expconfig["used_no_bursts"]
+    har_stats["burst_size"]=int(expconfig["used_burst_size"])
+    har_stats["no_bursts"]=int(expconfig["used_no_bursts"])
     har_stats["udp_server"]=expconfig["server_ip"]
-    har_stats["packet_size"]=expconfig["packet_size"]
+    har_stats["packet_size"]=int(expconfig["packet_size"])
     #har_stats["bw"]=output
     har_stats["dl_throughput_kbps"]=bw
     har_stats["Guid"]= expconfig['guid']

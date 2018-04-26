@@ -66,9 +66,9 @@ EXPCONFIG = {
         "verbosity": 2,  # 0 = "Mute", 1=error, 2=Information, 3=verbose
         "resultdir": "/monroe/results/",
         "modeminterfacename": "InternalInterface",
-        "burst_size":[2],
-	"no_bursts":30,
-	"server_ip":"193.10.227.44",	
+        "burst_size":[75,150,300,600,1200],
+	"no_bursts":10,
+	"server_ip":"130.243.27.222",	
 	"server_name":"",	
 	"packet_size":"1400",
         "allowed_interfaces": ["op0",
